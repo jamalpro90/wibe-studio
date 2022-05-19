@@ -60,6 +60,7 @@ const Left = styled.div`
     font-weight: 300;
     width: 80%;
     margin: 0 auto;
+    /* z-index: 11; */
   }
 `;
 
@@ -140,7 +141,7 @@ const Shop = () => {
           scroller: ".App", // locomotive element
           scrub: true,
           pin: true,
-          markers: true,
+          // markers: true,
         },
         height: `${scrollingElement.scrollWidth}px`,
         ease: "none,",
@@ -154,7 +155,7 @@ const Shop = () => {
           end: pinWrapWidth,
           scroller: ".App", // locomotive element
           scrub: true,
-          markers: true,
+          // markers: true,
         },
         x: -pinWrapWidth,
         ease: "none,",
@@ -163,7 +164,11 @@ const Shop = () => {
       ScrollTrigger.refresh();
     }, 1000);
 
-    return () => {};
+    return () => {
+      // let's clear the instances
+      t1.kill();
+      ScrollTrigger.kill();
+    };
   }, []);
 
   return (

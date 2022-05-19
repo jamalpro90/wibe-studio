@@ -28,6 +28,7 @@ const BannerComp = styled.h1`
   white-space: nowrap;
   text-transform: uppercase;
   line-height: 1;
+  z-index: 12;
 
   span {
     display: block;
