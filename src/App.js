@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles";
 import { dark } from "./styles/Theme";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Home from "./sections/Home";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import { AnimatePresence } from "framer-motion";
@@ -12,9 +12,17 @@ import ScrollTriggerProxy from "./components/ScrollTriggerProxy";
 import Banner from "./sections/Banner";
 import NewArrival from "./sections/NewArrival";
 import Footer from "./sections/Footer";
+import Loader from "./components/Loader";
 
 function App() {
   const containerRef = useRef(null);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 3000);
+  }, []);
 
   return (
     <>
@@ -33,6 +41,10 @@ function App() {
           }
           containerRef={containerRef}
         >
+          {/* Loader Animation */}
+          <AnimatePresence>{loaded ? null : <Loader />}</AnimatePresence>
+
+          {/* Main Content */}
           <ScrollTriggerProxy />
           <AnimatePresence>
             <main className="App" data-scroll-container ref={containerRef}>

@@ -66,6 +66,7 @@ const container = {
 
     transition: {
       duration: 2,
+      delay: 5,
     },
   },
 };
