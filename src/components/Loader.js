@@ -28,6 +28,10 @@ const Container = styled(motion.div)`
     stroke-linejoin: round;
     stroke-linecap: round;
 
+    @media (max-width: 48em) {
+      width: 30vw;
+    }
+
     g {
       path {
         stroke: #fff;

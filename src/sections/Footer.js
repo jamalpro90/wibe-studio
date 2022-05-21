@@ -33,8 +33,12 @@ const LogoContainer = styled.div`
   }
 
   h3 {
-    font-size: ${props => props.theme.fontxl};
+    font-size: ${props => props.theme.font2xl};
     font-family: "Kaushan Script";
+
+    @media (max-width: 48em) {
+      font-size: ${props => props.theme.fontxl};
+    }
   }
 `;
 
@@ -52,6 +56,10 @@ const FooterComp = styled(motion.footer)`
     padding: 0 1rem;
     border-top: 1px solid ${props => props.theme.text};
     border-bottom: 1px solid ${props => props.theme.text};
+
+    @media (max-width: 48em) {
+      justify-content: center;
+    }
   }
 
   li {
@@ -63,6 +71,11 @@ const FooterComp = styled(motion.footer)`
 
     &:hover {
       transform: scale(1.1);
+    }
+
+    @media (max-width: 48em) {
+      padding: 1rem;
+      font-size: ${props => props.theme.fontmd};
     }
   }
 `;
@@ -78,6 +91,20 @@ const Bottom = styled.div`
 
   a {
     text-decoration: underline;
+  }
+
+  @media (max-width: 64em) {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+
+    span {
+      transform: none !important;
+    }
+  }
+  @media (max-width: 48em) {
+    font-size: ${props => props.theme.fontmd};
   }
 `;
 
@@ -97,8 +124,8 @@ const Footer = () => {
   return (
     <Section>
       <LogoContainer>
-        <img data-scroll data-scroll-speed="2" src={Logo} alt="Wibe Studio" />
-        <h3 data-scroll data-scroll-speed="-2">
+        <img data-scroll data-scroll-speed="1" src={Logo} alt="Wibe Studio" />
+        <h3 data-scroll data-scroll-speed="-1">
           Wibe Studio
         </h3>
       </LogoContainer>

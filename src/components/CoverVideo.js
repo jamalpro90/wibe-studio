@@ -12,6 +12,13 @@ const VideoContainer = styled.section`
     width: 100%;
     height: 100vh;
     object-fit: cover;
+
+    @media (max-width: 48em) {
+      object-position: center 10%;
+    }
+  }
+  @media (max-width: 30em) {
+    object-position: center 50%;
   }
 `;
 
@@ -47,6 +54,10 @@ const Title = styled(motion.div)`
     font-family: "kaushan Script";
     font-size: ${props => props.theme.font4xl};
     text-shadow: 3px 3px 3px ${props => props.theme.body};
+
+    @media (max-width: 30em) {
+      font-size: calc(5rem + 8vw);
+    }
   }
   h2 {
     font-family: "Sirin Stencil";
@@ -54,6 +65,11 @@ const Title = styled(motion.div)`
     text-shadow: 3px 3px 3px ${props => props.theme.body};
     /* font-weight: 300; */
     text-transform: capitalize;
+
+    @media (max-width: 30em) {
+      font-size: ${props => props.theme.fontmd};
+      margin-top: -1.5rem;
+    }
   }
 `;
 

@@ -10,6 +10,15 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 48em) {
+    width: 90vw;
+  }
+  @media (max-width: 64em) {
+    /* border: 3px solid red; */
+    min-height: 300px;
+    height: 70vh;
+  }
 `;
 
 const Container = styled.div`
@@ -19,6 +28,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 64em) {
+    justify-content: center;
+  }
 `;
 
 const BannerComp = styled.h1`
@@ -29,6 +42,20 @@ const BannerComp = styled.h1`
   text-transform: uppercase;
   line-height: 1;
   z-index: 12;
+  @media (max-width: 70em) {
+    /* font-size: ${props => props.theme.font2xl}; */
+    margin: 1rem 0;
+  }
+  @media (max-width: 64em) {
+    font-size: ${props => props.theme.fontxl};
+    margin: 1rem 0;
+  }
+  @media (max-width: 48em) {
+    font-size: ${props => props.theme.fontlg};
+  }
+  @media (max-width: 30em) {
+    font-size: ${props => props.theme.fontmd};
+  }
 
   span {
     display: block;
